@@ -1,11 +1,14 @@
+/*  Created by Intellij IDEA.
+ *   Author : Mukul Agarawal
+ *   Date   : 28/10/2020
+ *   File   : Rabbit.java
+ */
 package thread.rabbit;
 
 import javax.swing.*;
 
 public class Rabbit implements Runnable {
-
     private static final int MILESTONES = 5;
-
     private final Thread rabbit;
 
     public Rabbit() {
@@ -21,17 +24,17 @@ public class Rabbit implements Runnable {
         for (int index = 0; index < MILESTONES; index++) {
             switch (index) {
                 case 0:
-                    System.out.println("The Rabbit has started from the start line!");
+                    System.out.println("The " + rabbit.getName() + " has started from the start line!");
                     break;
                 case 1:
-                    System.out.println("The Rabbit has reached the Cool River!");
+                    System.out.println("The " + rabbit.getName() + " has reached the Cool River!");
                     break;
                 case 2:
-                    System.out.println("The Rabbit has reached the Mountain Hill!");
+                    System.out.println("The " + rabbit.getName() + " has reached the Mountain Hill!");
                     break;
                 case 3:
-                    System.out.println("The Rabbit has reached the Big Oak Tree!");
-                    System.out.println("The Rabbit is leading and hence is going to sleep!");
+                    System.out.println("The " + rabbit.getName() + " has reached the Big Oak Tree!");
+                    System.out.println("The " + rabbit.getName() + " is leading and hence is going to sleep!");
                     try {
                         Thread.sleep(9000L);
                     } catch (InterruptedException e) {
@@ -39,13 +42,13 @@ public class Rabbit implements Runnable {
                     }
                     break;
                 case 4:
-                    System.out.println("The Rabbit has reached the finish line!");
+                    System.out.println("The " + rabbit.getName() + " has reached the finish line!");
                     break;
             }
             try {
                 Thread.sleep(1500L);
             } catch (InterruptedException e) {
-                System.err.println("The rabbit has lost the path!");
+                System.err.println("The Rabbit has lost the path!");
             }
         }
         JOptionPane.showConfirmDialog(
